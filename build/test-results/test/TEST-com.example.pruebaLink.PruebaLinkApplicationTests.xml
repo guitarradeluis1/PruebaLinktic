@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.pruebaLink.PruebaLinkApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-07T16:05:48.953Z" hostname="MacBook-Air-de-Luis.local" time="6.802">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.pruebaLink.PruebaLinkApplicationTests" time="2.085"/>
+  <system-out><![CDATA[11:05:49.777 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.pruebaLink.PruebaLinkApplicationTests]: PruebaLinkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:50.207 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.pruebaLink.PruebaLinkApplication for test class com.example.pruebaLink.PruebaLinkApplicationTests
+11:05:50.497 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.pruebaLink.PruebaLinkApplicationTests]: PruebaLinkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:50.505 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.pruebaLink.PruebaLinkApplication for test class com.example.pruebaLink.PruebaLinkApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-04-07T11:05:51.826-05:00  INFO 4087 --- [pruebaLink] [    Test worker] c.e.p.PruebaLinkApplicationTests         : Starting PruebaLinkApplicationTests using Java 21.0.5 with PID 4087 (started by luis in /Volumes/Mis Archivos/Proyectos/Java/PruebaLinktic)
+2026-04-07T11:05:51.832-05:00  INFO 4087 --- [pruebaLink] [    Test worker] c.e.p.PruebaLinkApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-04-07T11:05:53.628-05:00  INFO 4087 --- [pruebaLink] [    Test worker] c.e.p.PruebaLinkApplicationTests         : Started PruebaLinkApplicationTests in 2.884 seconds (process running for 8.109)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/luis/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
