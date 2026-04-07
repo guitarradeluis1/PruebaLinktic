@@ -1,0 +1,5 @@
+PUT http://localhost:8080/productos/1
+{
+  "nombre": "Teclado Mecánico Razer",
+  "precio": 129.99
+}

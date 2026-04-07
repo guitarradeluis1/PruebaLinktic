@@ -1,0 +1,8 @@
+POST http://localhost:8080/productos/new
+Content-Type: application/json
+
+{
+  "nombre": "Demostración",
+  "precio": 85.99,
+  "descripcion": "Teclado gaming RGB"
+}
