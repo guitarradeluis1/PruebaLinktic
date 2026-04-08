@@ -12,6 +12,7 @@ Se realiza desarollo en SQLite el archivo se encuentra en:
 ```
 src/main/resources/BD/data.sqlite3
 ```
+![Diagrama de base de datos](doc/bd.png)
 
 ## Api Productos
 Crud para manejo de productos (API JSON)
