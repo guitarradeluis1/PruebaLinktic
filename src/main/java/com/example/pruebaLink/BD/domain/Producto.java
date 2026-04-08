@@ -15,4 +15,7 @@ public class Producto {
 
     private Double precio;
     private String descripcion;
+
+    //@OneToOne(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //private Inventario inventario;
 }

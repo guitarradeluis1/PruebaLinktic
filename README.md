@@ -1,8 +1,14 @@
 # Prueba Linktic- Desarrollador Backend
  Luis Eduardo Bernal S.
 
+## Uso Swagger
+Para su ejecución la [URL](http://localhost:8080/swagger-ui/index.html) :
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
 ## Base de datos
-Se realiza desarollo en SQLite el archivo se encuentra en_
+Se realiza desarollo en SQLite el archivo se encuentra en:
 ```
 src/main/resources/BD/data.sqlite3
 ```
