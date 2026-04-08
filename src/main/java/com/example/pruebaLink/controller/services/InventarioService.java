@@ -4,7 +4,6 @@ import com.example.pruebaLink.BD.DTO.InventarioDTO;
 import com.example.pruebaLink.BD.domain.EventoInventario;
 import com.example.pruebaLink.BD.domain.Inventario;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 

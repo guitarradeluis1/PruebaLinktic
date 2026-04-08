@@ -12,7 +12,15 @@ Se realiza desarollo en SQLite el archivo se encuentra en:
 ```
 src/main/resources/BD/data.sqlite3
 ```
-![Diagrama de base de datos](doc/bd.png)
+![Diagrama de base de datos](doc/bd.png
+
+## Manejo de complas
+Param el manejo de compras se realiza la siguiente trazado
+1. Se crea una Orde de servicio
+2. Se agrega productos a esta orden
+3. Una vez cerrada la orden esta de forma automatica realiza actualización de cantidad en inventario
+
+Nota: Los evento se registran de forma automatica al realizar estos cambio generando historico de registros
 
 ## Api Productos
 Crud para manejo de productos (API JSON)
