@@ -8,3 +8,5 @@
 *.bin
 *.bin
 .gradle/file-system.probe
+/htmlReport
+/.gradle
