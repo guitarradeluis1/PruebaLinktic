@@ -10,3 +10,7 @@
 .gradle/file-system.probe
 /htmlReport
 /.gradle
+/.gradle/9.4.1/executionHistory
+.gradle/9.4.1/executionHistory/executionHistory.bin
+/.gradle/9.4.1
+/.gradle
