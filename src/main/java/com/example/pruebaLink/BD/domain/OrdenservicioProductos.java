@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "ordenservicio_productos")
@@ -19,15 +18,17 @@ public class OrdenservicioProductos {
     @Column(name = "id")
     private Long id;
 
-    //@Column(name = "ordenservicio_id")
-    //private Long ordenservicioId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ordenservicio_id", nullable = false)
+    private OrdenServicio ordenServicio;
 
-    @Column(name = "producto_id")
-    private Long productoId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Producto producto;
 
-    @Column(name = "cantidad")
+    @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
 
-    @Column(name = "costo")
+    @Column(name = "costo", nullable = false)
     private Double costo;
 }
