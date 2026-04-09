@@ -18,6 +18,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class OrdenServicio {
 
     @Id
@@ -36,6 +37,9 @@ public class OrdenServicio {
 
     @Column(name = "total")
     private BigDecimal total;
+
+    @Column(name = "cerrado")
+    private Integer cerrado;
 
     @OneToMany(mappedBy = "ordenServicio",
             cascade = CascadeType.ALL,

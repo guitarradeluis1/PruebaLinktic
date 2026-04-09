@@ -8,13 +8,14 @@ import com.example.pruebaLink.BD.repository.OrdenServicioRepository;
 import com.example.pruebaLink.BD.repository.OrdenservicioProductosRepository;
 import com.example.pruebaLink.BD.repository.ProductoRepository;
 import com.example.pruebaLink.controller.services.OrdenServicioService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -33,7 +34,18 @@ public class OrdenServicioImpl implements OrdenServicioService {
 
     @Override
     public Optional<OrdenServicio> newOrden() {
-        return Optional.empty();
+        try{
+            OrdenServicio orden = OrdenServicio.builder()
+                    .fecha(LocalDateTime.now().toLocalDate())
+                    .cerrado(0)
+                    .build();
+            OrdenServicio saved = ordenServicioRepository.save(orden);
+            log.info("Orden creada exitosamente: {} con total: {}",
+                    saved.getId(), saved.getTotal());
+            return Optional.of(saved);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -79,6 +91,41 @@ public class OrdenServicioImpl implements OrdenServicioService {
         } catch (Exception e) {
             log.error("ERROR consultando Orden: {}, {}", id, e.getMessage());
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    @Transactional
+    public Optional<OrdenServicio> cerrarOrden(long id) {
+        log.info("Cerrando orden de servicio: {}", id);
+        try {
+            OrdenServicio orden = ordenServicioRepository.findById(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Orden no encontrada: " + id));
+            if (orden.getCerrado() == 1) {
+                throw new IllegalStateException("La orden ya está cerrada");
+            }
+            if (orden.getProductos() == null || orden.getProductos().isEmpty()) {
+                throw new IllegalStateException("No se puede cerrar una orden sin productos");
+            }
+            Double total = orden.getProductos().stream()
+                    .mapToDouble(producto ->
+                            producto.getCantidad() * producto.getCosto())
+                    .sum();
+            orden.setTotal(BigDecimal.valueOf(total));
+            orden.setCerrado(1);
+            OrdenServicio saved = ordenServicioRepository.save(orden);
+
+            log.info("Orden {} cerrada exitosamente | Total calculado: ${}",
+                    saved.getId(), saved.getTotal());
+
+            return Optional.of(saved);
+
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            log.error("Error de validación cerrando orden {}: {}", id, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            log.error("Error cerrando orden {}: {}", id, e.getMessage(), e);
+            throw new RuntimeException("No se pudo cerrar la orden", e);
         }
     }
 }
